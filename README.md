@@ -1,0 +1,2 @@
+# CineChad
+Página de cine
