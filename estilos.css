@@ -130,50 +130,78 @@ nav ul li a{
 }
 
 
-.diapositiva{
-    width: 1280px;
-    height: 600;
-    margin: 20px auto 0;
+.diapositiva {
+    width: 100%; /* Ajuste la anchura al 100% del contenedor */
+    height: auto; /* Permitir que la altura sea automática */
+    max-width: 1280px; /* Mantener un ancho máximo */
+    margin: 20px auto; /* Centrar horizontalmente */
     overflow: hidden;
 }
 
-
-.diapositiva ul{
+.diapositiva ul {
     display: flex;
-    padding: 0%;
+    padding: 0;
     width: 400%;
     animation: slide 16s infinite ease-in-out;
-
-
 }
 
-
-.diapositiva li{
+.diapositiva li {
     list-style: none;
     width: 100%;
 }
 
-
-.diapositiva img{
+.diapositiva img {
     width: 100%;
+    height: auto; /* Ajustar la altura automáticamente */
 }
 
-
 @keyframes slide {
-    0%{margin-left: 0%;}
-    20%{margin-left: 0%;}
+    0% { margin-left: 0%; }
+    20% { margin-left: 0%; }
+    25% { margin-left: -100%; }
+    45% { margin-left: -100%; }
+    50% { margin-left: -200%; }
+    70% { margin-left: -200%; }
+    75% { margin-left: -300%; }
+    95% { margin-left: -300%; }
+}
 
+@media (max-width: 768px) {
+    .diapositiva {
+        height: auto; /* Permitir que la altura sea automática */
+        margin: 10px auto; 
+    }
 
-    25%{margin-left: -100%;}
-    45%{margin-left: -100%;}
+    .diapositiva ul {
+        width: 300%; /* Ajustar el ancho de la lista para el tamaño más pequeño */
+    }
 
+    @keyframes slide {
+        0% { margin-left: 0%; }
+        30% { margin-left: 0%; }
+        35% { margin-left: -100%; }
+        65% { margin-left: -100%; }
+        70% { margin-left: -200%; }
+        100% { margin-left: -200%; }
+    }
+}
 
-    50%{margin-left: -200%;}
-    70%{margin-left: -200%;}
+@media (max-width: 480px) {
+    .diapositiva {
+        height: auto; /* Permitir que la altura sea automática */
+        margin: 5px auto; 
+    }
 
+    .diapositiva ul {
+        width: 200%; /* Ajustar el ancho de la lista para el tamaño más pequeño */
+    }
 
-    75%{margin-left: -300%;}
-    95%{margin-left: -300%;}
+    @keyframes slide {
+        0% { margin-left: 0%; }
+        50% { margin-left: 0%; }
+        55% { margin-left: -100%; }
+        100% { margin-left: -100%; }
+    }
 }
 .contenido{
     background: radial-gradient(circle, #ffa500, #ff4500); /* Degradado radial de naranja a naranja oscuro */ color: white; padding: 20px; border-radius: 10px;
